@@ -1,0 +1,300 @@
+/*bg-gradient-to-r from-backgroundColor to-brightColor shadow-[0_3px_10px_rgb(0,0,0,0.2)] => navbar
+bg-gradient-to-r from-[#FFDCAB] to-[#AB6B2E] => Header body
+ brightColor: "#AB6B2E",
+        backgroundColor: "#FDE9CC"
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to right, #fde9cc, #ab6b2e);
+  font-family: "Poppins", sans-serif;
+}
+
+.nav-container {
+  background-image: linear-gradient(to right, #fde9cc, #ab6b2e);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 15px;
+  box-shadow: 0px 3px 10px rgb(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1000;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.coffee-icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.nav-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.nav-center {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  transition: transform 0.3s ease-in-out, color 0.3s ease;
+  padding: 10px;
+}
+
+.nav-link {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  color: #000;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  transition: width 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  background: black;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #ab6b2e;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.login-button {
+  border: 2px solid #fff;
+  padding: 9px 18px;
+  border-radius: 20px;
+  background-color: #ffdcab;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #fde9cc;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Hero Component*/
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.hero-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  gap: 20px;
+  position: relative;
+}
+
+.hero-heading {
+  flex: 1;
+  padding-right: 20px;
+  font-size: 20px;
+}
+
+.hero-heading h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.hero-heading p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.header-image img {
+  max-width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.hero-button {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.hero-button button {
+  border: 2px solid #fff;
+  padding: 9px 18px;
+  border-radius: 20px;
+  background-color: #fde9cc;
+  cursor: pointer;
+}
+
+.hero-button button:hover {
+  color: rgba(0, 0, 0, 0.595);
+}
+
+/* Responsive Design*/
+
+@media (max-width: 768px) {
+  .nav-center {
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 60px;
+    background-color: #fde9cc;
+    padding: 20px 0;
+    text-align: center;
+    display: none;
+  }
+
+  .nav-active {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: 10px 0;
+    font-size: 18px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-right {
+    justify-content: flex-end;
+  }
+
+  .hero-box {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-heading {
+    padding-right: 0;
+  }
+
+  .hero-heading h1 {
+    font-size: 2rem;
+  }
+
+  .hero-heading p {
+    font-size: 0.9rem;
+  }
+
+  .header-image {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-text {
+    font-size: 1.25rem;
+  }
+
+  .nav-center {
+    padding: 15px 0;
+  }
+
+  .nav-link {
+    font-size: 16px;
+  }
+
+  .login-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .nav-container {
+    padding: 8px 10px;
+  }
+
+  .hero-heading h1 {
+    font-size: 1.75rem;
+  }
+
+  .hero-heading p {
+    font-size: 0.85rem;
+  }
+
+  .hero-button button {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 475px) {
+  .nav-text {
+    font-size: 1rem;
+  }
+
+  .nav-center {
+    padding: 10px 0;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+
+  .login-button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .coffee-icon {
+    font-size: 20px;
+  }
+
+  .hero-heading h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-heading p {
+    font-size: 0.8rem;
+  }
+
+  .hero-button button {
+    padding: 7px 14px;
+    font-size: 0.8rem;
+  }
+}
