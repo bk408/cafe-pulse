@@ -172,6 +172,81 @@ body {
   color: rgba(0, 0, 0, 0.595);
 }
 
+/*Menu Component*/
+
+.menu-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-box {
+  padding: 5px;
+  margin: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.menu-header {
+  margin-top: 100px; /* If require then make changes here*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: span 3;
+}
+
+.menu-card {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #fff;
+  background-color: white;
+  border-radius: 7px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.menu-img {
+  min-width: 200px;
+  min-height: 180px;
+}
+
+.menu-img h3 {
+  margin: 8px;
+}
+
+.menu-img img {
+  width: 200px;
+  height: 150px;
+  border-radius: 8px;
+}
+
+.menu-title {
+}
+
+.menu-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 55px;
+}
+
+.menu-btn button {
+  border: 2px solid #ab6b2e;
+  padding: 9px 18px;
+  border-radius: 10px;
+  background-color: #ffdcab;
+  cursor: pointer;
+}
+
+.menu-btn button:hover {
+  color: #ab6b2e;
+}
+
 /* Responsive Design*/
 
 @media (max-width: 768px) {
@@ -225,6 +300,24 @@ body {
   .header-image {
     margin-top: 20px;
   }
+
+  .menu-box {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  .menu-header {
+    grid-column: span 2;
+    margin-top: 60px;
+  }
+
+  .menu-img img {
+    width: 200px;
+    height: 150px;
+  }
+
+  .menu-btn {
+    gap: 60px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -261,6 +354,25 @@ body {
     padding: 8px 16px;
     font-size: 0.85rem;
   }
+
+  .menu-box {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .menu-header {
+    margin-top: 40px;
+    grid-column: span 1;
+  }
+
+  .menu-img img {
+    width: 200px;
+    height: 150px;
+  }
+
+  .menu-btn {
+    gap: 55px;
+  }
 }
 
 @media (max-width: 475px) {
@@ -296,5 +408,26 @@ body {
   .hero-button button {
     padding: 7px 14px;
     font-size: 0.8rem;
+  }
+
+  .menu-box {
+    gap: 15px;
+  }
+
+  .menu-header {
+    margin-top: 20px;
+  }
+
+  .menu-img img {
+    width: 200px;
+    height: 150px;
+  }
+
+  .menu-btn {
+    gap: 50px;
+  }
+
+  .menu-card {
+    margin-top: 10px;
   }
 }
